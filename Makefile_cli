@@ -1,0 +1,11 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99 -Iinclude
+LIBS = -ljson-c -lmingw32_extended
+
+cli_client: cli_client.c
+	$(CC) $(CFLAGS) -o cli_client cli_client.c $(LIBS)
+
+clean:
+	rm -f cli_client cli_client.exe
+
+.PHONY: clean
